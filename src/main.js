@@ -121,3 +121,11 @@ function createPoster(imageURL, title, quote) {
     title: title, 
     quote: quote}
 }
+
+function displayPoster(poster) {
+  posterImage.src = poster.imagesURL
+  posterTitle.innertext = poster.title
+  posterQuote.innertext = poster.quote
+}
+
+
