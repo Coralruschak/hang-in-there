@@ -128,4 +128,7 @@ function displayPoster(poster) {
   posterQuote.innertext = poster.quote
 }
 
-
+function randomPoster(){
+  currentPoster = createPoster(getRandomElement(images), getRandomElement(titles), getRandomElement(quotes))
+  displayPoster(currentPoster)
+}
