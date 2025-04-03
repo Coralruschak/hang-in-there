@@ -1,4 +1,5 @@
 // query selector variables go here 👇
+var mainPosterSection = document.querySelector('.main-poster')
 var posterImage = document.querySelector('.poster-img')
 var posterTitle = document.querySelector('.poster-title')
 var posterQuote = document.querySelector('.poster-quote')
@@ -7,8 +8,10 @@ var showRandomButton = document.querySelector('.show-random')
 var showFormButton = document.querySelector('.show-form')
 var showSavedButton = document.querySelector('.show-saved')
 
+var posterFormSection = document.querySelector('.poster-form')
 var showMainButton = document.querySelector('.show-main')
 
+var savedPostersSection = document.querySelector('.saved-posters')
 var toMainButton = document.querySelector('.back-to-main')
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
@@ -115,6 +118,10 @@ var currentPoster;
 // event listeners go here 👇
 addEventListener('load', createRandomPoster)
 showRandomButton.addEventListener('click', createRandomPoster)
+
+
+
+
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
 function getRandomElement(array) {
