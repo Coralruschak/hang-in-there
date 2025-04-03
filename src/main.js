@@ -1,9 +1,18 @@
 // query selector variables go here 👇
+var mainPosterSection = document.querySelector('.main-poster')
 var posterImage = document.querySelector('.poster-img')
 var posterTitle = document.querySelector('.poster-title')
 var posterQuote = document.querySelector('.poster-quote')
 
 var showRandomButton = document.querySelector('.show-random')
+var showFormButton = document.querySelector('.show-form')
+var showSavedButton = document.querySelector('.show-saved')
+
+var posterFormSection = document.querySelector('.poster-form')
+var showMainButton = document.querySelector('.show-main')
+
+var savedPostersSection = document.querySelector('.saved-posters')
+var toMainButton = document.querySelector('.back-to-main')
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
 var images = [
@@ -109,6 +118,15 @@ var currentPoster;
 // event listeners go here 👇
 addEventListener('load', createRandomPoster)
 showRandomButton.addEventListener('click', createRandomPoster)
+
+showFormButton.addEventListener('click', ViewPosterFormSection)
+showMainButton.addEventListener('click', viewMainSection)
+
+
+showSavedButton.addEventListener('click', viewSavedPostersSection)
+toMainButton.addEventListener('click', viewMainSection)
+
+
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
 function getRandomElement(array) {
@@ -132,4 +150,20 @@ function displayPoster(poster) {
 function createRandomPoster(){
   currentPoster = createPoster(getRandomElement(images), getRandomElement(titles), getRandomElement(quotes))
   displayPoster(currentPoster)
+}
+
+function ViewPosterFormSection() {
+  mainPosterSection.classList.add('hidden')
+  posterFormSection.classList.remove('hidden')
+}
+
+function viewSavedPostersSection() {
+  mainPosterSection.classList.add('hidden')
+  savedPostersSection.classList.remove('hidden')
+}
+
+function viewMainSection() {
+  posterFormSection.classList.add('hidden')
+  savedPostersSection.classList.add('hidden')
+  mainPosterSection.classList.remove('hidden')
 }
