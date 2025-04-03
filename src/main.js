@@ -141,6 +141,18 @@ function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
+function repeatReview() {
+  let copies = 0
+  savedPosters.forEach((savedPoster) => {
+    if (savedPoster.id === currentPoster.id) {
+      copies += 1
+    } else {
+      copies += 0
+    }
+  })
+  return copies
+}
+
 function createPoster(imageURL, title, quote) {
   return {
     id: Date.now(), 
@@ -161,7 +173,7 @@ function saveInput(poster) {
   quotes.push(poster.quote)
 }
 
-function createRandomPoster(){
+function createRandomPoster() {
   currentPoster = createPoster(getRandomElement(images), getRandomElement(titles), getRandomElement(quotes))
   displayPoster(currentPoster)
 }
@@ -175,7 +187,9 @@ function createUserPoster(event) {
 }
 
 function savePoster() {
-  savedPosters.push(currentPoster)
+  if (repeatReview() === 0) {
+    savedPosters.push(currentPoster)
+  } 
 }
 
 
