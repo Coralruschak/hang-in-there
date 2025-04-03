@@ -4,6 +4,12 @@ var posterTitle = document.querySelector('.poster-title')
 var posterQuote = document.querySelector('.poster-quote')
 
 var showRandomButton = document.querySelector('.show-random')
+var showFormButton = document.querySelector('.show-form')
+var showSavedButton = document.querySelector('.show-saved')
+
+var showMainButton = document.querySelector('.show-main')
+
+var toMainButton = document.querySelector('.back-to-main')
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
 var images = [
