@@ -128,6 +128,7 @@ showRandomButton.addEventListener('click', createRandomPoster)
 
 showFormButton.addEventListener('click', ViewPosterFormSection)
 showMainButton.addEventListener('click', viewMainSection)
+makePosterButton.addEventListener('click', createUserPoster)
 
 showSavedButton.addEventListener('click', viewSavedPostersSection)
 toMainButton.addEventListener('click', viewMainSection)
@@ -152,9 +153,16 @@ function displayPoster(poster) {
   posterQuote.innerText = poster.quote
 }
 
+
+
 function createRandomPoster(){
   currentPoster = createPoster(getRandomElement(images), getRandomElement(titles), getRandomElement(quotes))
   displayPoster(currentPoster)
+}
+
+function createUserPoster(event) {
+  event.preventDefault()
+  currentPoster = createPoster(userImage.value, userTitle.value, userQuote.value)
 }
 
 function ViewPosterFormSection() {
