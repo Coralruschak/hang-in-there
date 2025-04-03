@@ -119,7 +119,12 @@ var currentPoster;
 addEventListener('load', createRandomPoster)
 showRandomButton.addEventListener('click', createRandomPoster)
 
+showFormButton.addEventListener('click', ViewPosterFormSection)
+showMainButton.addEventListener('click', viewMainSection)
 
+
+showSavedButton.addEventListener('click', viewSavedPostersSection)
+toMainButton.addEventListener('click', viewMainSection)
 
 
 // functions and event handlers go here 👇
@@ -145,4 +150,20 @@ function displayPoster(poster) {
 function createRandomPoster(){
   currentPoster = createPoster(getRandomElement(images), getRandomElement(titles), getRandomElement(quotes))
   displayPoster(currentPoster)
+}
+
+function ViewPosterFormSection() {
+  mainPosterSection.classList.add('hidden')
+  posterFormSection.classList.remove('hidden')
+}
+
+function viewSavedPostersSection() {
+  mainPosterSection.classList.add('hidden')
+  savedPostersSection.classList.remove('hidden')
+}
+
+function viewMainSection() {
+  posterFormSection.classList.add('hidden')
+  savedPostersSection.classList.add('hidden')
+  mainPosterSection.classList.remove('hidden')
 }
