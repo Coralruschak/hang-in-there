@@ -5,6 +5,7 @@ var posterImage = document.querySelector('.poster-img')
 var posterTitle = document.querySelector('.poster-title')
 var posterQuote = document.querySelector('.poster-quote')
 
+var savePosterButton = document.querySelector('.save-poster')
 var showRandomButton = document.querySelector('.show-random')
 var showFormButton = document.querySelector('.show-form')
 var showSavedButton = document.querySelector('.show-saved')
@@ -124,11 +125,12 @@ var currentPoster;
 
 // event listeners go here 👇
 addEventListener('load', createRandomPoster)
+savePosterButton.addEventListener('click', savePoster)
 showRandomButton.addEventListener('click', createRandomPoster)
 
 showFormButton.addEventListener('click', ViewPosterFormSection)
-showMainButton.addEventListener('click', viewMainSection)
 makePosterButton.addEventListener('click', createUserPoster)
+showMainButton.addEventListener('click', viewMainSection)
 
 showSavedButton.addEventListener('click', viewSavedPostersSection)
 toMainButton.addEventListener('click', viewMainSection)
@@ -171,6 +173,11 @@ function createUserPoster(event) {
   displayPoster(currentPoster)
   viewMainSection()
 }
+
+function savePoster() {
+  savedPosters.push(currentPoster)
+}
+
 
 function ViewPosterFormSection() {
   mainPosterSection.classList.add('hidden')
