@@ -168,6 +168,8 @@ function createUserPoster(event) {
   event.preventDefault()
   currentPoster = createPoster(userImage.value, userTitle.value, userQuote.value)
   saveInput(currentPoster)
+  displayPoster(currentPoster)
+  viewMainSection()
 }
 
 function ViewPosterFormSection() {
