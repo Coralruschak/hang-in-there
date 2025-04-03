@@ -148,8 +148,8 @@ function createPoster(imageURL, title, quote) {
 
 function displayPoster(poster) {
   posterImage.src = poster.imageURL
-  posterTitle.innertext = poster.title
-  posterQuote.innertext = poster.quote
+  posterTitle.innerText = poster.title
+  posterQuote.innerText = poster.quote
 }
 
 function createRandomPoster(){
