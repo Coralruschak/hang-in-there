@@ -1,4 +1,5 @@
 // query selector variables go here 👇
+// Main View
 var mainPosterSection = document.querySelector('.main-poster')
 var posterImage = document.querySelector('.poster-img')
 var posterTitle = document.querySelector('.poster-title')
@@ -8,9 +9,15 @@ var showRandomButton = document.querySelector('.show-random')
 var showFormButton = document.querySelector('.show-form')
 var showSavedButton = document.querySelector('.show-saved')
 
+// New Poster Form View 
 var posterFormSection = document.querySelector('.poster-form')
+var userImage = document.querySelector('#poster-image-url')
+var userTitle = document.querySelector('#poster-title')
+var userQuote = document.querySelector('#poster-quote')
+var makePosterButton = document.querySelector('.make-poster')
 var showMainButton = document.querySelector('.show-main')
 
+// Saved Poster View
 var savedPostersSection = document.querySelector('.saved-posters')
 var toMainButton = document.querySelector('.back-to-main')
 // we've provided you with some data to work with 👇
@@ -122,10 +129,8 @@ showRandomButton.addEventListener('click', createRandomPoster)
 showFormButton.addEventListener('click', ViewPosterFormSection)
 showMainButton.addEventListener('click', viewMainSection)
 
-
 showSavedButton.addEventListener('click', viewSavedPostersSection)
 toMainButton.addEventListener('click', viewMainSection)
-
 
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
