@@ -1,4 +1,5 @@
 // query selector variables go here 👇
+// Main View
 var mainPosterSection = document.querySelector('.main-poster')
 var posterImage = document.querySelector('.poster-img')
 var posterTitle = document.querySelector('.poster-title')
@@ -8,9 +9,15 @@ var showRandomButton = document.querySelector('.show-random')
 var showFormButton = document.querySelector('.show-form')
 var showSavedButton = document.querySelector('.show-saved')
 
+// New Poster Form View 
 var posterFormSection = document.querySelector('.poster-form')
+var userImage = document.querySelector('#poster-image-url')
+var userTitle = document.querySelector('#poster-title')
+var userQuote = document.querySelector('#poster-quote')
+var makePosterButton = document.querySelector('.make-poster')
 var showMainButton = document.querySelector('.show-main')
 
+// Saved Poster View
 var savedPostersSection = document.querySelector('.saved-posters')
 var toMainButton = document.querySelector('.back-to-main')
 // we've provided you with some data to work with 👇
@@ -121,11 +128,10 @@ showRandomButton.addEventListener('click', createRandomPoster)
 
 showFormButton.addEventListener('click', ViewPosterFormSection)
 showMainButton.addEventListener('click', viewMainSection)
-
+makePosterButton.addEventListener('click', createUserPoster)
 
 showSavedButton.addEventListener('click', viewSavedPostersSection)
 toMainButton.addEventListener('click', viewMainSection)
-
 
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
@@ -143,13 +149,27 @@ function createPoster(imageURL, title, quote) {
 
 function displayPoster(poster) {
   posterImage.src = poster.imageURL
-  posterTitle.innertext = poster.title
-  posterQuote.innertext = poster.quote
+  posterTitle.innerText = poster.title
+  posterQuote.innerText = poster.quote
+}
+
+function saveInput(poster) {
+  images.push(poster.imageURL)
+  titles.push(poster.title)
+  quotes.push(poster.quote)
 }
 
 function createRandomPoster(){
   currentPoster = createPoster(getRandomElement(images), getRandomElement(titles), getRandomElement(quotes))
   displayPoster(currentPoster)
+}
+
+function createUserPoster(event) {
+  event.preventDefault()
+  currentPoster = createPoster(userImage.value, userTitle.value, userQuote.value)
+  saveInput(currentPoster)
+  displayPoster(currentPoster)
+  viewMainSection()
 }
 
 function ViewPosterFormSection() {
