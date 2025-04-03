@@ -153,7 +153,11 @@ function displayPoster(poster) {
   posterQuote.innerText = poster.quote
 }
 
-
+function saveInput(poster) {
+  images.push(poster.imageURL)
+  titles.push(poster.title)
+  quotes.push(poster.quote)
+}
 
 function createRandomPoster(){
   currentPoster = createPoster(getRandomElement(images), getRandomElement(titles), getRandomElement(quotes))
@@ -163,6 +167,7 @@ function createRandomPoster(){
 function createUserPoster(event) {
   event.preventDefault()
   currentPoster = createPoster(userImage.value, userTitle.value, userQuote.value)
+  saveInput(currentPoster)
 }
 
 function ViewPosterFormSection() {
